@@ -21,3 +21,18 @@ C:\Users\Eric\Documents\SharpDevelop Projects\Test\Test\bin\Debug\SharpVectors.D
 C:\Users\Eric\Documents\SharpDevelop Projects\Test\Test\bin\Debug\SharpVectors.Runtime.Wpf.pdb
 C:\Users\Eric\Documents\SharpDevelop Projects\Test\Test\bin\Debug\Svg.pdb
 C:\Users\Eric\Documents\SharpDevelop Projects\Test\Test\bin\Debug\Svg.xml
+C:\Users\erict\Desktop\Bootcamp\Floorplan-Tool\Test\bin\Debug\Test.exe.config
+C:\Users\erict\Desktop\Bootcamp\Floorplan-Tool\Test\bin\Debug\Test.exe
+C:\Users\erict\Desktop\Bootcamp\Floorplan-Tool\Test\bin\Debug\Test.pdb
+C:\Users\erict\Desktop\Bootcamp\Floorplan-Tool\Test\bin\Debug\Svg.dll
+C:\Users\erict\Desktop\Bootcamp\Floorplan-Tool\Test\bin\Debug\SharpVectors.Core.pdb
+C:\Users\erict\Desktop\Bootcamp\Floorplan-Tool\Test\bin\Debug\SharpVectors.Css.pdb
+C:\Users\erict\Desktop\Bootcamp\Floorplan-Tool\Test\bin\Debug\SharpVectors.Dom.pdb
+C:\Users\erict\Desktop\Bootcamp\Floorplan-Tool\Test\bin\Debug\SharpVectors.Runtime.Wpf.pdb
+C:\Users\erict\Desktop\Bootcamp\Floorplan-Tool\Test\bin\Debug\Svg.pdb
+C:\Users\erict\Desktop\Bootcamp\Floorplan-Tool\Test\bin\Debug\Svg.xml
+C:\Users\erict\Desktop\Bootcamp\Floorplan-Tool\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\erict\Desktop\Bootcamp\Floorplan-Tool\Test\obj\Debug\Test.MainForm.resources
+C:\Users\erict\Desktop\Bootcamp\Floorplan-Tool\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+C:\Users\erict\Desktop\Bootcamp\Floorplan-Tool\Test\obj\Debug\Test.exe
+C:\Users\erict\Desktop\Bootcamp\Floorplan-Tool\Test\obj\Debug\Test.pdb

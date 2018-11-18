@@ -81,31 +81,39 @@ namespace Test
 		private Point start = Point.Empty;
 		private Point end = Point.Empty;
 		private void Form2_MouseDown(object sender, MouseEventArgs e) {
+			var p0 = ((Control)sender).Location;
+			
 			if ((e.Button & MouseButtons.Left) != 0) {
 				start.X = e.X;
-				start.Y = e.Y;
+				start.Y = e.Y ;
 			}
 		}
 
 		private void Form2_MouseMove(object sender, MouseEventArgs e) {
+	
 			Point p1;
 			Point p2;
 			if (((e.Button & MouseButtons.Left) != 0) && (start != Point.Empty)) {
 				using (Graphics g = this.CreateGraphics()) {
-					p1 = PointToScreen(start);
+					p1 = PointToScreen(start, (Control)sender);
 					if (end != Point.Empty) {
-						p2 = PointToScreen(end);
+						p2 = PointToScreen(end, (Control)sender);
 						ControlPaint.DrawReversibleFrame(GetRectangleForPoints(p1, p2), Color.Black, FrameStyle.Dashed);
 					}
 					end.X = e.X;
 					end.Y = e.Y;
-					p2 = PointToScreen(end);
+					p2 = PointToScreen(end, (Control)sender);
+					Debug.WriteLine(p2);
 					ControlPaint.DrawReversibleFrame(GetRectangleForPoints(p1, p2), Color.Black, FrameStyle.Dashed);
 				}
 			}
 		}
 		
-	
+		Point PointToScreen (Point p, Control c){
+			p = base.PointToScreen(p);
+			var p0 = c.Location;
+			return new Point(p.X + p0.X, p.Y + p0.Y);
+		}
 		
 		Rectangle GetRectangleForPoints (Point p1, Point p2){
 			return new Rectangle(p1, new Size(p2.X-p1.X,p2.Y-p1.Y));
@@ -116,8 +124,8 @@ namespace Test
 			Point p2;
 			if ((end != Point.Empty) && (start != Point.Empty)) {
 				using (Graphics g = this.CreateGraphics()) {
-					p1 = PointToScreen(start);
-					p2 = PointToScreen(end);
+					p1 = PointToScreen(start, (Control)sender);
+					p2 = PointToScreen(end, (Control)sender);
 					ControlPaint.DrawReversibleFrame(GetRectangleForPoints(p1, p2), Color.Black, FrameStyle.Dashed);
 				}
 			}
