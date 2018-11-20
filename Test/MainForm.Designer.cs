@@ -20,7 +20,12 @@ namespace Test
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.TextBox textBox2;
-		private System.Windows.Forms.ListBox listBox1;
+		private System.Windows.Forms.Button addZoneButton;
+		private System.Windows.Forms.TextBox newZoneTextBox;
+		private System.Windows.Forms.Label Add_Zone;
+		private System.Windows.Forms.ComboBox zoneDropdown;
+		private System.Windows.Forms.Button removeZoneButton;
+		private System.Windows.Forms.ColorDialog colorDialog1;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -35,13 +40,8 @@ namespace Test
 			}
 			base.Dispose(disposing);
 		}
-		
-		/// <summary>
-		/// This method is required for Windows Forms designer support.
-		/// Do not change the method contents inside the source code editor. The Forms designer might
-		/// not be able to load this method if it was changed manually.
-		/// </summary>
-		private void InitializeComponent()
+		public void InitializeComponent()
+
 		{
 			this.button1 = new System.Windows.Forms.Button();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -49,7 +49,12 @@ namespace Test
 			this.label2 = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.listBox1 = new System.Windows.Forms.ListBox();
+			this.zoneDropdown = new System.Windows.Forms.ComboBox();
+			this.addZoneButton = new System.Windows.Forms.Button();
+			this.newZoneTextBox = new System.Windows.Forms.TextBox();
+			this.Add_Zone = new System.Windows.Forms.Label();
+			this.removeZoneButton = new System.Windows.Forms.Button();
+			this.colorDialog1 = new System.Windows.Forms.ColorDialog();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -67,11 +72,11 @@ namespace Test
 			// 
 			this.pictureBox2.Location = new System.Drawing.Point(143, 12);
 			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(291, 314);
+			this.pictureBox2.Size = new System.Drawing.Size(404, 404);
 			this.pictureBox2.TabIndex = 2;
 			this.pictureBox2.TabStop = false;
-			pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseDown);
-			pictureBox2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseUp);
+			this.pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseDown);
+			this.pictureBox2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseUp);
 			pictureBox2.MouseMove += Form2_MouseMove;
 			// 
 			// label1
@@ -109,20 +114,59 @@ namespace Test
 			this.textBox2.TabIndex = 6;
 			this.textBox2.Text = "20";
 			// 
-			// listBox1
+			// zoneDropdown
 			// 
-			this.listBox1.FormattingEnabled = true;
-			this.listBox1.Location = new System.Drawing.Point(13, 96);
-			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(74, 134);
-			this.listBox1.TabIndex = 7;
+			this.zoneDropdown.FormattingEnabled = true;
+			this.zoneDropdown.Items.AddRange(new object[] {
+			"Basic Room"});
+			this.zoneDropdown.Location = new System.Drawing.Point(12, 92);
+			this.zoneDropdown.Name = "zoneDropdown";
+			this.zoneDropdown.Size = new System.Drawing.Size(121, 21);
+			this.zoneDropdown.TabIndex = 8;
+			// 
+			// addZoneButton
+			// 
+			this.addZoneButton.Location = new System.Drawing.Point(12, 330);
+			this.addZoneButton.Name = "addZoneButton";
+			this.addZoneButton.Size = new System.Drawing.Size(121, 40);
+			this.addZoneButton.TabIndex = 9;
+			this.addZoneButton.Text = "Add Zone";
+			this.addZoneButton.UseVisualStyleBackColor = true;
+			// 
+			// newZoneTextBox
+			// 
+			this.newZoneTextBox.Location = new System.Drawing.Point(12, 304);
+			this.newZoneTextBox.Name = "newZoneTextBox";
+			this.newZoneTextBox.Size = new System.Drawing.Size(100, 20);
+			this.newZoneTextBox.TabIndex = 10;
+			// 
+			// Add_Zone
+			// 
+			this.Add_Zone.Location = new System.Drawing.Point(12, 278);
+			this.Add_Zone.Name = "Add_Zone";
+			this.Add_Zone.Size = new System.Drawing.Size(100, 23);
+			this.Add_Zone.TabIndex = 11;
+			this.Add_Zone.Text = "New Zone Name";
+			// 
+			// removeZoneButton
+			// 
+			this.removeZoneButton.Location = new System.Drawing.Point(13, 376);
+			this.removeZoneButton.Name = "removeZoneButton";
+			this.removeZoneButton.Size = new System.Drawing.Size(121, 40);
+			this.removeZoneButton.TabIndex = 12;
+			this.removeZoneButton.Text = "Remove Selected Zone";
+			this.removeZoneButton.UseVisualStyleBackColor = true;
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(584, 461);
-			this.Controls.Add(this.listBox1);
+			this.Controls.Add(this.removeZoneButton);
+			this.Controls.Add(this.Add_Zone);
+			this.Controls.Add(this.newZoneTextBox);
+			this.Controls.Add(this.addZoneButton);
+			this.Controls.Add(this.zoneDropdown);
 			this.Controls.Add(this.textBox2);
 			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.label2);

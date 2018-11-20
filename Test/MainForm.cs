@@ -72,8 +72,7 @@ namespace Test
 		private Point end = Point.Empty;
 		private void Form2_MouseDown(object sender, MouseEventArgs e)
 		{
-		
-	
+			
 			if ((e.Button & MouseButtons.Left) != 0) {
 				start.X = e.X;
 				start.Y = e.Y;
@@ -93,7 +92,7 @@ namespace Test
 					
 					if (end != Point.Empty) {
 						p2 = pictureBox2.PointToScreen(end);
-					
+						Debug.WriteLine(p2);
 						ControlPaint.DrawReversibleFrame(GetRectangleForPoints(p1, p2), Color.Black, FrameStyle.Dashed);
 					}
 					end.X = e.X;
@@ -171,6 +170,27 @@ namespace Test
 		{
 	
 		}
+		void addZoneClick(object sender, EventArgs e)
+		{
+			var text = newZoneTextBox.Text;
+			if (! zoneDropdown.Items.Contains(text)){
+				Debug.WriteLine(text);
+				zoneDropdown.Items.Add(text);
+				newZoneTextBox.Text = "";
+			}
+			
+		}
+		
+		void removeZoneClick(object sender, EventArgs e)
+		{
+			var itemIndex = zoneDropdown.SelectedIndex;
+			if (itemIndex > 0){
+				zoneDropdown.Items.RemoveAt(itemIndex);
+			}
+			
+			
+		}
+		
 		
 		
 	}
