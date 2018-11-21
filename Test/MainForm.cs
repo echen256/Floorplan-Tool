@@ -38,7 +38,7 @@ namespace Test
 		void drawGrid()
 		{
 
-			 pictureBoxGraphics = pictureBox2.CreateGraphics();
+			pictureBoxGraphics = pictureBox2.CreateGraphics();
 
 			var w = pictureBox2.Width / x;
 			var h = pictureBox2.Height / y;
@@ -47,9 +47,9 @@ namespace Test
 			for (int i = 0; i < x; i++) {
 				for (int j = 0; j < y; j++) {
 					var rect = new Rectangle(i * w, j * h, w, h);
-					 pictureBoxGraphics.DrawRectangle(blackPen, rect);
-					 pictureBoxGraphics.FillRectangle(greyFill, new RectangleF(i * w + 1, j * h + 1, w - 2, h - 2));
-					 dict[new Point(i,j)] = Color.White;
+					pictureBoxGraphics.DrawRectangle(blackPen, rect);
+					pictureBoxGraphics.FillRectangle(greyFill, new RectangleF(i * w + 1, j * h + 1, w - 2, h - 2));
+					dict[new Point(i, j)] = Color.White;
 				}
 			}
 			pictureBox2.Update();
@@ -82,7 +82,7 @@ namespace Test
 
 		private void Form2_MouseMove(object sender, MouseEventArgs e)
 		{
-			var control =  (Control)sender;
+			var control = (Control)sender;
 			
 			Point p1;
 			Point p2;
@@ -118,7 +118,7 @@ namespace Test
 
 		private void Form2_MouseUp(object sender, MouseEventArgs e)
 		{
-			var control =  (Control)sender;
+			var control = (Control)sender;
 			Point p1;
 			Point p2;
 			if ((end != Point.Empty) && (start != Point.Empty)) {
@@ -131,20 +131,20 @@ namespace Test
 					var r = GetRectangleForPoints(p1, p2);
 					ControlPaint.DrawReversibleFrame(r, Color.Black, FrameStyle.Dashed);
 			
-					r = GetRectangleForPoints( pictureBox2.PointToClient(p1), pictureBox2.PointToClient(p2));
+					r = GetRectangleForPoints(pictureBox2.PointToClient(p1), pictureBox2.PointToClient(p2));
 					Debug.WriteLine(r);
 					var w = pictureBox2.Width / x;
 					var h = pictureBox2.Height / y;
 					p1 = r.Location;
 					p2 = new Point(r.Location.X + r.Width, r.Location.Y + r.Height);
 					
-					for (int i = p1.X/w; i < p2.X/w;i++){
-						for (int j = p1.Y/h; j < p2.Y/h;j++){
+					for (int i = p1.X / w; i < p2.X / w; i++) {
+						for (int j = p1.Y / h; j < p2.Y / h; j++) {
 							var x1 = i * w + 1;
 							var y1 = j * h + 1;
 							
-							dict[new Point(x1,y1)] = red.Color;
-							g.FillRectangle(red, new RectangleF( x1, y1 , w - 2, h - 2));
+							dict[new Point(x1, y1)] = red.Color;
+							g.FillRectangle(red, new RectangleF(x1, y1, w - 2, h - 2));
 						}
 					}
 					
@@ -170,6 +170,14 @@ namespace Test
 		void TextBox1TextChanged(object sender, EventArgs e)
 		{
 	
+		}
+		
+		private void checkedListBox1_ItemCheck(object sender, EventArgs e)
+		{
+			var e2 = (ItemCheckedEventArgs)e;
+			for (int ix = 0; ix < checkedListBox1.Items.Count; ++ix)
+				if (ix != e2.Index)
+					checkedListBox1.SetItemChecked(ix, false);
 		}
 		
 		

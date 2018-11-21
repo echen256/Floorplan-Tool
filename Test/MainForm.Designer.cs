@@ -20,7 +20,7 @@ namespace Test
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.TextBox textBox2;
-		private System.Windows.Forms.ListBox listBox1;
+		private System.Windows.Forms.CheckedListBox checkedListBox1;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -49,7 +49,7 @@ namespace Test
 			this.label2 = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.listBox1 = new System.Windows.Forms.ListBox();
+			this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -70,9 +70,8 @@ namespace Test
 			this.pictureBox2.Size = new System.Drawing.Size(291, 314);
 			this.pictureBox2.TabIndex = 2;
 			this.pictureBox2.TabStop = false;
-			pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseDown);
-			pictureBox2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseUp);
-			pictureBox2.MouseMove += Form2_MouseMove;
+			this.pictureBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseDown);
+			this.pictureBox2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form2_MouseUp);
 			// 
 			// label1
 			// 
@@ -109,20 +108,34 @@ namespace Test
 			this.textBox2.TabIndex = 6;
 			this.textBox2.Text = "20";
 			// 
-			// listBox1
+			// checkedListBox1
 			// 
-			this.listBox1.FormattingEnabled = true;
-			this.listBox1.Location = new System.Drawing.Point(13, 96);
-			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(74, 134);
-			this.listBox1.TabIndex = 7;
+			
+			
+			this.checkedListBox1.AllowDrop = true;
+			this.checkedListBox1.FormattingEnabled = true;
+			this.checkedListBox1.Items.AddRange(new object[] {
+			"Red",
+			"Blue",
+			"Green",
+			"Yellow"});
+			this.checkedListBox1.Location = new System.Drawing.Point(12, 92);
+			this.checkedListBox1.Name = "checkedListBox1";
+			this.checkedListBox1.Size = new System.Drawing.Size(76, 94);
+			this.checkedListBox1.TabIndex = 9;
+			
+			checkedListBox1.SelectedIndexChanged += checkedListBox1_ItemCheck;
+			
+			
+			
+			
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(584, 461);
-			this.Controls.Add(this.listBox1);
+			this.Controls.Add(this.checkedListBox1);
 			this.Controls.Add(this.textBox2);
 			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.label2);
