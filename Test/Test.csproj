@@ -95,6 +95,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Zone.cs" />
+    <Compile Include="IDictionaryExtensions.cs" />
     <Compile Include="Image Reader\Image_Reader.cs" />
     <Compile Include="MainForm.cs" />
     <Compile Include="MainForm.Designer.cs">
@@ -105,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="list.xml" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,18 @@
+<prop>
+	<Default w = "1" h = "1" color = "#000000">
+	</Default>
+	<Erase w = "1" h = "1" color = "#FFFFFF">
+	</Erase>
+	<Staircase w = "4" h = "1" color = "#0000FF">
+	</Staircase>
+	<Entrance w = "1" h = "1" color = "#6600cc">
+	</Entrance>
+	<I1x1I w = "1" h = "1" color = "#ff0000">
+	</I1x1I>
+	<I2x1I w = "2" h = "1" color = "#00cc00">
+	</I2x1I>
+	<I2x2I w = "2" h = "2" color = "#003300">
+		</I2x2I>
+	<I2x3I w = "2" h = "3" color = "#ccff33">
+		</I2x3I>
+</prop>
